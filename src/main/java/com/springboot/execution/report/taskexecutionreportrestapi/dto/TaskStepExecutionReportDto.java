@@ -14,9 +14,14 @@ import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Data
-public class TaskStepExecutionReportDto extends TaskBaseEntity {
+public class TaskStepExecutionReportDto{
 
-	private long taskExecutionId;
+	private Long id;
+	private LocalDateTime startDateTime;
+	private LocalDateTime endDateTime;
+	private Long executionTimeSeconds;
+	private String errorMessage;
+	private Long taskExecutionId;
 	private String stepName;
 	private String status;
 }

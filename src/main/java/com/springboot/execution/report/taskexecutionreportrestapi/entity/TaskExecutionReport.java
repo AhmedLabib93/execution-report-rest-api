@@ -47,7 +47,7 @@ public class TaskExecutionReport extends TaskBaseEntity {
 		for (TaskStepExecutionReport taskStep : taskStepExecutionReports) {
 			if (taskStep.getStatus().equals("RUNNING")) {
 				return "RUNNING";
-			} else if (taskStep.getStatus().equals("FAILAURE")) {
+			} else if (taskStep.getStatus().equals("FAILURE")) {
 				status = "FAILURE";
 			}
 		}

@@ -9,6 +9,6 @@ import com.springboot.execution.report.taskexecutionreportrestapi.entity.TaskSte
 
 public interface TaskStepExecutionReportRepository extends JpaRepository<TaskStepExecutionReport, Long> {
 
-	List<TaskStepExecutionReport> findByTaskExecutionReport(long taskId);
+	List<TaskStepExecutionReport> findByTaskExecutionReportId(Long taskId);
 	
 }

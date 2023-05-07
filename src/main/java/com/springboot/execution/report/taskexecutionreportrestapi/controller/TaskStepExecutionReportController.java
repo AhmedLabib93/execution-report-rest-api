@@ -53,7 +53,7 @@ public class TaskStepExecutionReportController {
 		return new ResponseEntity<>(taskStepService.getTaskStepExecutionReportById(taskId, stepId), HttpStatus.OK);
 	}
 
-	@PutMapping("/tasks/{taskId}/steps/{stepIdsteps}")
+	@PutMapping("/tasks/{taskId}/steps/{stepId}")
 	public ResponseEntity<TaskStepExecutionReportDto> updateComment(@PathVariable long taskId,
 			@PathVariable long stepId, @RequestBody TaskStepExecutionReportDto taskStepDto) {
 

@@ -55,7 +55,7 @@ public class TaskStepExecutionReportServiceImpl implements TaskStepExecutionRepo
 	public List<TaskStepExecutionReportDto> getTaskStepExecutionReportByTaskId(Long taskId, String sortBy, String sortDir) {
 		Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
 				: Sort.by(sortBy).descending();
-		List<TaskStepExecutionReport> taskSteps = taskStepRepository.findByTaskExecutionReport(taskId);
+		List<TaskStepExecutionReport> taskSteps = taskStepRepository.findByTaskExecutionReportId(taskId);
 		return taskSteps.stream().map(taskStep -> mapToDto(taskStep)).collect(Collectors.toList());
 	}
 	

@@ -34,7 +34,7 @@ public class TaskStepExecutionReport extends TaskBaseEntity {
 
 	@Column(unique = true)
 	@NotNull(message = "TaskStepExecutionReport TaskId can't be null")
-	private long taskExecutionId;
+	private Long taskExecutionId;
 
 	private String stepName;
 
