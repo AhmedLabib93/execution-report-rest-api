@@ -20,7 +20,7 @@ public class TaskBaseEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
 	@CreationTimestamp
 	private LocalDateTime startDateTime;
@@ -29,11 +29,11 @@ public class TaskBaseEntity {
 	private LocalDateTime endDateTime;
 
 	@ReadOnlyProperty
-	private long executionTimeSeconds;
+	private Long executionTimeSeconds;
 
 	private String errorMessage;
 
-	public long getExecutionTimeSeconds() {
+	public Long getExecutionTimeSeconds() {
 		if (startDateTime != null && endDateTime != null)
 			executionTimeSeconds = ChronoUnit.SECONDS.between(startDateTime, endDateTime);
 		return executionTimeSeconds;

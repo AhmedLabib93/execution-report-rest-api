@@ -19,10 +19,13 @@ import com.springboot.execution.report.taskexecutionreportrestapi.service.TaskEx
 import com.springboot.execution.report.taskexecutionreportrestapi.service.TaskStepExecutionReportService;
 import com.springboot.execution.report.taskexecutionreportrestapi.utils.ExecutionReportConstants;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "TaskStepExceutionReport CRUD Rest API")
 @RestController
 @RequestMapping("execution/report")
 public class TaskStepExecutionReportController {
-	
+
 	private TaskStepExecutionReportService taskStepService;
 
 	public TaskStepExecutionReportController(TaskStepExecutionReportService taskStepService) {

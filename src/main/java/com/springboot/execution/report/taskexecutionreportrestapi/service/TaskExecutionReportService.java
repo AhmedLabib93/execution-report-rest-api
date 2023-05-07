@@ -14,9 +14,9 @@ public interface TaskExecutionReportService {
 	
 	public List<TaskExecutionReportDto> getAllTaskExecutionReportsByStatus(String status);
 
-	public TaskExecutionReportDto getTaskExecutionReportById(long id);
+	public TaskExecutionReportDto getTaskExecutionReportById(Long id);
 
-	public TaskExecutionReportDto updateTaskExecutionReport(TaskExecutionReportDto taskDto, long id);
+	public TaskExecutionReportDto updateTaskExecutionReport(TaskExecutionReportDto taskDto, Long id);
 
-	public void deleteTaskExecutionReportById(long id);
+	public void deleteTaskExecutionReportById(Long id);
 }

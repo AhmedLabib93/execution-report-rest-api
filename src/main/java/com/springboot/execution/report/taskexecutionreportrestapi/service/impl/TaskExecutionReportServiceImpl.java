@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.springboot.execution.report.taskexecutionreportrestapi.dto.TaskExecutionReportDto;
 import com.springboot.execution.report.taskexecutionreportrestapi.entity.TaskExecutionReport;
+import com.springboot.execution.report.taskexecutionreportrestapi.exception.ResourceNotFoundException;
 import com.springboot.execution.report.taskexecutionreportrestapi.repository.TaskExecutionReportRepository;
 import com.springboot.execution.report.taskexecutionreportrestapi.service.TaskExecutionReportService;
 
@@ -64,14 +65,14 @@ public class TaskExecutionReportServiceImpl implements TaskExecutionReportServic
 	}
 
 	@Override
-	public TaskExecutionReportDto getTaskExecutionReportById(long taskId) {
-		TaskExecutionReport task = taskRepository.findById(taskId).orElseThrow(() -> new RuntimeException(""));
+	public TaskExecutionReportDto getTaskExecutionReportById(Long taskId) {
+		TaskExecutionReport task = taskRepository.findById(taskId).orElseThrow(() -> new  ResourceNotFoundException("TaskExecutionReport", "Id", taskId));
 		return mapToDto(task);
 	}
 
 	@Override
-	public TaskExecutionReportDto updateTaskExecutionReport(TaskExecutionReportDto taskDto, long taskId) {
-		TaskExecutionReport task = taskRepository.findById(taskId).orElseThrow(() -> new RuntimeException(""));
+	public TaskExecutionReportDto updateTaskExecutionReport(TaskExecutionReportDto taskDto, Long taskId) {
+		TaskExecutionReport task = taskRepository.findById(taskId).orElseThrow(() -> new  ResourceNotFoundException("TaskExecutionReport", "Id", taskId));
 		task.setTaskId(taskDto.getTaskId());
 		task.setErrorMessage(taskDto.getErrorMessage());
 		task.setEndDateTime(taskDto.getEndDateTime());
@@ -81,7 +82,7 @@ public class TaskExecutionReportServiceImpl implements TaskExecutionReportServic
 	}
 
 	@Override
-	public void deleteTaskExecutionReportById(long taskId) {
+	public void deleteTaskExecutionReportById(Long taskId) {
 		taskRepository.deleteById(taskId);
 	}
 }

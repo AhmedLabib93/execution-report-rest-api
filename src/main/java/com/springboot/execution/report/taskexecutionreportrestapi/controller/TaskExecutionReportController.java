@@ -18,6 +18,9 @@ import com.springboot.execution.report.taskexecutionreportrestapi.dto.TaskExecut
 import com.springboot.execution.report.taskexecutionreportrestapi.service.TaskExecutionReportService;
 import com.springboot.execution.report.taskexecutionreportrestapi.utils.ExecutionReportConstants;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "TaskExceutionReport CRUD Rest API")
 @RestController
 @RequestMapping("execution/report/tasks")
 public class TaskExecutionReportController {

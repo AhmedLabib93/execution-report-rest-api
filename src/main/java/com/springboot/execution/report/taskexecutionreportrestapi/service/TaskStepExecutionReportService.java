@@ -7,14 +7,14 @@ import com.springboot.execution.report.taskexecutionreportrestapi.entity.TaskSte
 
 public interface TaskStepExecutionReportService {
 
-	TaskStepExecutionReportDto createTaskStepExecutionReport(long taskId, TaskStepExecutionReportDto taskStepDto);
+	TaskStepExecutionReportDto createTaskStepExecutionReport(Long taskId, TaskStepExecutionReportDto taskStepDto);
 
-	TaskStepExecutionReportDto getTaskStepExecutionReportById(long taskId, long taskStepId);
+	TaskStepExecutionReportDto getTaskStepExecutionReportById(Long taskId, Long taskStepId);
 
-	List<TaskStepExecutionReportDto> getTaskStepExecutionReportByTaskId(long taskId, String sortBy, String sortDir);
+	List<TaskStepExecutionReportDto> getTaskStepExecutionReportByTaskId(Long taskId, String sortBy, String sortDir);
 
-	TaskStepExecutionReportDto updateTaskStepExecutionReport(long taskId, long taskStepId,
+	TaskStepExecutionReportDto updateTaskStepExecutionReport(Long taskId, Long taskStepId,
 			TaskStepExecutionReportDto taskStepDto);
 
-	void deleteTaskStepExecutionReportById(long taskId, long taskStepId);
+	void deleteTaskStepExecutionReportById(Long taskId, Long taskStepId);
 }

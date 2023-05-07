@@ -41,7 +41,7 @@ public class TaskStepExecutionReportServiceImpl implements TaskStepExecutionRepo
 	}
 
 	@Override
-	public TaskStepExecutionReportDto createTaskStepExecutionReport(long taskId,
+	public TaskStepExecutionReportDto createTaskStepExecutionReport(Long taskId,
 			TaskStepExecutionReportDto taskStepDto) {
 		TaskStepExecutionReport taskStep = mapToEntity(taskStepDto);
 		TaskExecutionReport task = taskRepository.findById(taskId)
@@ -52,7 +52,7 @@ public class TaskStepExecutionReportServiceImpl implements TaskStepExecutionRepo
 	}
 
 	@Override
-	public List<TaskStepExecutionReportDto> getTaskStepExecutionReportByTaskId(long taskId, String sortBy, String sortDir) {
+	public List<TaskStepExecutionReportDto> getTaskStepExecutionReportByTaskId(Long taskId, String sortBy, String sortDir) {
 		Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
 				: Sort.by(sortBy).descending();
 		List<TaskStepExecutionReport> taskSteps = taskStepRepository.findByTaskExecutionReport(taskId);
@@ -61,7 +61,7 @@ public class TaskStepExecutionReportServiceImpl implements TaskStepExecutionRepo
 	
 
 	@Override
-	public TaskStepExecutionReportDto getTaskStepExecutionReportById(long taskId, long taskStepId) {
+	public TaskStepExecutionReportDto getTaskStepExecutionReportById(Long taskId, Long taskStepId) {
 		TaskExecutionReport task = taskRepository.findById(taskId)
 				.orElseThrow(() -> new ResourceNotFoundException("TaskExecutionReport", "Id", taskId));
 		TaskStepExecutionReport taskStep = taskStepRepository.findById(taskStepId)
@@ -73,7 +73,7 @@ public class TaskStepExecutionReportServiceImpl implements TaskStepExecutionRepo
 	}
 
 	@Override
-	public TaskStepExecutionReportDto updateTaskStepExecutionReport(long taskId, long taskStepId,
+	public TaskStepExecutionReportDto updateTaskStepExecutionReport(Long taskId, Long taskStepId,
 			TaskStepExecutionReportDto taskStepDto) {
 		TaskExecutionReport task = taskRepository.findById(taskId)
 				.orElseThrow(() -> new ResourceNotFoundException("TaskExecutionReport", "Id", taskId));
@@ -93,7 +93,7 @@ public class TaskStepExecutionReportServiceImpl implements TaskStepExecutionRepo
 	}
 
 	@Override
-	public void deleteTaskStepExecutionReportById(long taskId, long taskStepId) {
+	public void deleteTaskStepExecutionReportById(Long taskId, Long taskStepId) {
 		TaskExecutionReport task = taskRepository.findById(taskId)
 				.orElseThrow(() -> new ResourceNotFoundException("TaskExecutionReport", "Id", taskId));
 		TaskStepExecutionReport taskStep = taskStepRepository.findById(taskStepId)

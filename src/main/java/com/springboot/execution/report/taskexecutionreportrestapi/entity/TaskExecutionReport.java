@@ -16,6 +16,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,7 +30,8 @@ import lombok.Setter;
 public class TaskExecutionReport extends TaskBaseEntity {
 
 	@Column(unique = true)
-	private long taskId;
+	@NotNull(message = "TaskExecutionReport TaskId can't be null")
+	private Long taskId;
 
 	@OneToMany(mappedBy = "taskExecutionReport", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<TaskStepExecutionReport> taskStepExecutionReports = new ArrayList<>();
