@@ -1,10 +1,10 @@
-package com.springboot.task.reporting.taskrepostingrestapi;
+package com.springboot.execution.report.taskexecutionreportrestapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TaskRepostingRestApiApplicationTests {
+class ExecutionReportRestApiApplicationTests {
 
 	@Test
 	void contextLoads() {

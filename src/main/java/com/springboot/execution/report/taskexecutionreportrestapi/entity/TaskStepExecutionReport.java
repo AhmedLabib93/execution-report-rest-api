@@ -25,10 +25,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+
 @NoArgsConstructor
 @Setter
 @Getter
+@Entity
 public class TaskStepExecutionReport extends TaskBaseEntity {
 
 	@Column(unique = true)

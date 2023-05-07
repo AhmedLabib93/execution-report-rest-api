@@ -22,11 +22,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class TaskExecutionReport extends TaskBaseEntity {
 
 	@Column(unique = true)
