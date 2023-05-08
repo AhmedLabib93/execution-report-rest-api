@@ -7,10 +7,10 @@
 		<version>3.0.6</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.springboot.task.reporting</groupId>
-	<artifactId>task-reposting-rest-api</artifactId>
+	<groupId>com.execution.report</groupId>
+	<artifactId>task-execution-report</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>task-reposting-rest-api</name>
+	<name>task-execution-report</name>
 	<description>Spring Boot Task Reporting</description>
 	<properties>
 		<java.version>17</java.version>
